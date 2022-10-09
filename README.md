@@ -3,8 +3,14 @@
 ## Project Plan
 
 - Setup
-  MDX Support
-  MDX files live outside of the pages fodler
+  ✔ MDX Support
+  ☐ Typeography
+  ☐ Forms
+  ☐ Line-Clamp
+  ☐ Aspect Ratio
+  
+  MDX files live outside of the pages folder
+  Create a layout that is driven from Markdown
 - Create base structure using the Syntax Documentation template
   - Navbar
   - Side menu

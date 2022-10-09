@@ -5,5 +5,10 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx()]
+  server: { port: 3003 },
+  integrations: [tailwind({
+    config: {
+      applyBaseStyles: false
+    }
+  }), mdx()]
 });
