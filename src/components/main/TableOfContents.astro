@@ -6,7 +6,7 @@ export interface Props {
   headings: any[];
 }
 
-const { title, headings } = Astro.props as Props;
+const { title, headings = [] } = Astro.props as Props;
 
 // console.log(JSON.stringify(headings, null, 2));
 console.log(headings);

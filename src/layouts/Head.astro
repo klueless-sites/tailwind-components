@@ -6,9 +6,6 @@ export interface Props {
   next?: string;
   prev?: string;
   canonicalURL: string | URL;
-  font_awesome: boolean;
-  site_map: boolean;
-  rss_feed: boolean;
 }
 
 const { 
@@ -18,9 +15,6 @@ const {
   next,
   prev,
   canonicalURL,
-  font_awesome,
-  site_map,
-  rss_feed,
 } = Astro.props as Props;
 ---
 
@@ -50,12 +44,6 @@ const {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 {image && (<meta property="twitter:image" content={new URL(image, Astro.url)} />)}
-
-<!-- Extras -->
-{font_awesome && (<link rel="preconnect" href="//cdnjs.cloudflare.com" />)}
-{font_awesome && (<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />)}
-{site_map && (<link rel="site_map" href="/site_map.xml">)}
-{rss_feed && (<link rel="alternate" type="application/rss+xml" href="/feed/posts.xml">)}
 
 <!-- SEO -->
 <link rel="canonical" href={canonicalURL}>

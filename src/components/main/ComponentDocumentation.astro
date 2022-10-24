@@ -1,0 +1,19 @@
+---
+import ComponentSection from './ComponentSection.astro'
+import ComponentTitle from './ComponentTitle.astro'
+// import ComponentExample from './ComponentExample.astro'
+
+export interface Props {
+  section?: string;
+  title?: string;
+}
+
+const { section = 'xmen are cool', title = "It's good to be the king" } = Astro.props as Props;
+---
+<article>
+  <header class="mb-9 space-y-1">
+    {section && (<ComponentSection section={section} />)}
+    {title && (<ComponentTitle title={title} />)}
+  </header>
+  <slot />
+</article>

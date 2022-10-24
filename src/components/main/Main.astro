@@ -1,19 +1,16 @@
 ---
-import Article from './Article.astro'
+import ComponentDocumentation from './ComponentDocumentation.astro'
 import NextPage from './NextPage.astro';
 import PreviousPage from './PreviousPage.astro';
 import TableOfContents from './TableOfContents.astro';
 import Navigation from './Navigation.astro';
-import type AppContext from '~/lib/app_context';
 
 export interface Props {
   title?: string;
   headings: any[];
-  navigation: any;
-  context: AppContext;
 }
 
-const { title, headings, navigation, context } = Astro.props as Props;
+const { title, headings, navigation } = Astro.props as Props;
 
 ---
 <div class="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
@@ -24,9 +21,9 @@ const { title, headings, navigation, context } = Astro.props as Props;
     <!-- <code>
       <pre>{JSON.stringify(context, null, 2)}</pre>
     </code> -->
-    <Article title={title}>
+    <ComponentDocumentation title={title}>
       <slot />
-    </Article>
+    </ComponentDocumentation>
     <dl class="mt-12 flex border-t border-slate-200 pt-6 dark:border-slate-800">
       <PreviousPage />
       <NextPage />

@@ -1,5 +1,5 @@
 ---
-layout: ~/layouts/BaseLayout.astro
+layout: ~/layouts/ComponentLayout.astro
 title: Tailwind Components
 ---
 

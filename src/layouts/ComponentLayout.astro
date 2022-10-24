@@ -1,0 +1,41 @@
+---
+import '~/styles/base.css';
+
+import { SITE } from '~/lib/config';
+
+import Head from '~/layouts/Head.astro';
+import Header from '~/components/header/Header.astro';
+import Main from '~/components/main/Main.astro';
+
+export interface Props {
+  title?: string;
+  pageTitle?: string;
+  description?: string;
+  image?: string;
+  next?: string;
+  prev?: string;
+  canonicalURL?: string;
+}
+
+const { 
+  title = 'tttt1', // Astro.props.content.title || SITE.title,
+  pageTitle = 'tttt2', // Astro.props.content.pageTitle || Astro.props.content.title || SITE.title,
+  description = 'tttt3', //Astro.props.content.description || SITE.description,
+  canonicalURL = Astro.url,
+} = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class='scroll-smooth'>
+<Head 
+  title={pageTitle}
+  description={description}
+  canonicalURL={canonicalURL} />
+
+<body class="bg-white dark:bg-slate-900">
+  <Header />
+  <Main title={title} headings={Astro.props.headings}>
+    <slot />
+  </Main>  
+</body>
+</html>

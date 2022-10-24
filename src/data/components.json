@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "title": "Bulbasaur",
+    "slug": "a/b/bulbasaur",
+    "pageTitle": "Bulbasaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "special_attack": 65,
+    "special_defense": 65,
+    "speed": 45
+  },
+  {
+    "id": 2,
+    "name": "Ivysaur",
+    "title": "Ivysaur",
+    "pageTitle": "Ivysaur",
+    "slug": "ivysaur",
+    "type": [
+      "Grass",
+      "Poison"
+    ],
+    "hp": 60,
+    "attack": 62,
+    "defense": 63,
+    "special_attack": 80,
+    "special_defense": 80,
+    "speed": 60
+  }
+]

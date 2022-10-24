@@ -1,0 +1,51 @@
+---
+// import type { Pokemon } from "../../types";
+
+import ComponentLayout from '~/layouts/ComponentLayout.astro';
+import components from '../data/components.json';
+//         name: component.title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,''),
+
+export function getStaticPaths() {
+  for (const component of components) {
+    console.log(component);
+  }
+  return components.map((component) => ({
+      params: { 
+        slug: component.slug
+      },
+      props: {
+        component
+      }
+    }));
+}
+
+const component = Astro.props.component;
+const image = `/images/${component.name.toLowerCase()}.jpg`
+
+---
+<ComponentLayout >
+  <div class="flex gap-2">
+    <div class="max-w-md">
+      <img src={image} alt={component.name} class="w-full" />
+    </div>
+    <div>
+      <h1 class="font-bold text-5xl mb-2">{component.name}</h1>
+      <div class="italic text-xl">{component.type.join(", ")}</div>
+      <div
+        class="grid" style='grid-template-tolumns: 1fr 1fr'>
+        <div class="font-bold mr-4">HP</div>
+        <div>{component.hp}</div>
+        <div class="font-bold mr-4">Speed</div>
+        <div>{component.speed}</div>
+        <div class="font-bold mr-4">Attack</div>
+        <div>{component.attack}</div>
+        <div class="font-bold mr-4">Special Attack</div>
+        <div>{component.special_attack}</div>
+        <div class="font-bold mr-4">Defense</div>
+        <div>{component.defense}</div>
+        <div class="font-bold mr-4">Special Defense</div>
+        <div>{component.special_defense}</div>
+      </div>
+    </div>
+  </div>
+</ComponentLayout>
